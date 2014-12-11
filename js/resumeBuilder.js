@@ -1,5 +1,76 @@
-var formattedName = HTMLheaderName.replace("%data%", "Aditya Gorti");
-var formattedRole = HTMLheaderRole.replace("%data%", "Front-End Web Developer");
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
+var bio = {
+	"name": "Aditya Gorti",
+	"role": "Web Developer",
+	"contacts": {
+		"mobile": "858-205-2420",
+		"email": "adityagorti6@gmail.com",
+		"github": "https://github.com/adityagorti" ,
+		"location": "San Diego"
+		}
+	}
+
+	"picURL": "https://placekitten.com/g/200/300",
+	welcMessage: "Welcome to my Resume",
+	skills: HTMLskills.replace("%data%","Awesomeness, quick learner, self disciplined, reliable, and innovative")
+
+
+};
+
+var education = {
+    "schools": [
+    {
+        "name": "Mount San Antonio",
+        "location": "San Diego",
+        "degree": "transfer",
+        "majors": "Electrical Engineering",
+        "dates": "2005-2008",
+        "url": "mtsac.com"
+    },
+
+    {	"name": "UCSD",
+        "location": "San Diego",
+        "degree": "BS",
+        "majors": "Electrical Engineering",
+        "dates": "2008-2011",
+        "url": "ucsd.edu"
+    }],
+    "onlinecourse": {
+    	"title": "Udacity Nano Degree",
+    	"school": "Udacity",
+    	"dates": "2014-present",
+    	"url": "Udacity.com"
+    }
+    }
+
+var work = {
+	"jobs": [
+		{
+			"employer": "LPL Financial",
+			"title": "Service Analyst",
+			"location": "San Diego",
+			"dates": "2011-Present",
+			"description":"Service Analysis"
+		},
+		{
+			"employer": "Ametek",
+			"title": "Repair Admin",
+			"location": "San Diego",
+			"dates": "2010-2011",
+			"description":"Service Analysis"
+		}
+		]
+	
+}  
+
+  var projects = {
+  	"projects": [
+  		{
+  			"title": null,
+  			"dates": null,
+  			"description": null ,
+   			"images": null
+  		}
+  	]
+
+  }
