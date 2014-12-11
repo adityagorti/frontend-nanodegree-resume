@@ -1,21 +1,19 @@
 
 var bio = {
-	"name": "Aditya Gorti",
-	"role": "Web Developer",
-	"contacts": {
-		"mobile": "858-205-2420",
-		"email": "adityagorti6@gmail.com",
-		"github": "https://github.com/adityagorti" ,
-		"location": "San Diego"
-		}
-	}
-
-	"picURL": "https://placekitten.com/g/200/300",
-	welcMessage: "Welcome to my Resume",
-	skills: HTMLskills.replace("%data%","Awesomeness, quick learner, self disciplined, reliable, and innovative")
-
-
-};
+    "name": "Aditya Gorti",
+    "role": "Web Developer",
+    "contacts": {
+        "mobile": "858-205-2420",
+        "email": "adityagorti6@gmail.com",
+        "github": "https://github.com/adityagorti",
+        "location": "San Diego"
+    },
+    "welcMessage": "Welcome to my Resume",
+    "skills": [
+        "awesome",
+        "badass"
+    ]
+}
 
 var education = {
     "schools": [
