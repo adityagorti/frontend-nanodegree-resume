@@ -72,3 +72,11 @@ var work = {
   	]
 
   }
+
+if(bio.skills.length > 0){
+	
+	$("#header").append(HTMLskillsStart);
+	$("#skills").append(HTMLskills.replace("%data%",bio.skills[0]));
+		$("#skills").append(HTMLskills.replace("%data%",bio.skills[1]));
+
+}
