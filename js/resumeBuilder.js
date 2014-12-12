@@ -77,6 +77,14 @@ if(bio.skills.length > 0){
 	
 	$("#header").append(HTMLskillsStart);
 	$("#skills").append(HTMLskills.replace("%data%",bio.skills[0]));
-		$("#skills").append(HTMLskills.replace("%data%",bio.skills[1]));
+	$("#skills").append(HTMLskills.replace("%data%",bio.skills[1]));
 
+}
+
+for(xyz in work.jobs){
+	$("#workExperience").append(HTMLworkStart);
+	var formattedEmployer = $("#workExperience").HTMLworkEmployer.replace("%data%",work.jobs[xyz].employer);
+	var formattedtitle=	$("#workExperience").HTMLworkTitle.replace("%data%",work.jobs[xyz].title);
+	var formattedEmployerTitle = formattedEmployer + formattedtitle;
+	$(".work-entry:last").append(formattedEmployerTitle);	 
 }
