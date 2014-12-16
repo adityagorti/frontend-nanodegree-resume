@@ -73,6 +73,9 @@ var work = {
 
   }
 
+
+
+
 if(bio.skills.length > 0){
 	
 	$("#header").append(HTMLskillsStart);
@@ -83,8 +86,15 @@ if(bio.skills.length > 0){
 
 for(xyz in work.jobs){
 	$("#workExperience").append(HTMLworkStart);
-	var formattedEmployer = $("#workExperience").HTMLworkEmployer.replace("%data%",work.jobs[xyz].employer);
-	var formattedtitle=	$("#workExperience").HTMLworkTitle.replace("%data%",work.jobs[xyz].title);
+	var formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[xyz].employer);
+	var formattedtitle=	HTMLworkTitle.replace("%data%",work.jobs[xyz].title);
 	var formattedEmployerTitle = formattedEmployer + formattedtitle;
-	$(".work-entry:last").append(formattedEmployerTitle);	 
+	var workDates = HTMLworkDates.replace("%data%",work.jobs[xyz].dates);
+	var workLocation = HTMLworkLocation.replace("%data%",work.jobs[xyz].location)
+	var workDescription = HTMLworkDescription.replace("%data%",work.jobs[xyz].description);
+	$(".work-entry:last").append(formattedEmployerTitle);
+	$(".work-entry:last").append(workDates);
+	$(".work-entry:last").append(workLocation);
+	$(".work-entry:last").append(workDescription);	 
 }
+
