@@ -84,6 +84,8 @@ if(bio.skills.length > 0){
 
 }
 
+
+var displayWork = function() {
 for(xyz in work.jobs){
 	$("#workExperience").append(HTMLworkStart);
 	var formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[xyz].employer);
@@ -97,4 +99,12 @@ for(xyz in work.jobs){
 	$(".work-entry:last").append(workLocation);
 	$(".work-entry:last").append(workDescription);	 
 }
+}
 
+displayWork();
+
+$(document).click(function(loc){
+
+ 	logClicks(loc);
+
+ });
