@@ -53,7 +53,7 @@ var work = {
 		{
 			"employer": "Ametek",
 			"title": "Repair Admin",
-			"location": "San Diego",
+			"location": "Oakland, CA",
 			"dates": "2010-2011",
 			"description":"Service Analysis"
 		}
@@ -72,6 +72,12 @@ var work = {
   	]
 
   }
+
+var formattedName = HTMLheaderName.replace("%data%",bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
+$("#header").append(formattedName);
+$("#header").append(formattedRole);
+
 
 projects.display = function() {
     for(var x in projects.projects){
@@ -128,8 +134,12 @@ $("#main").append(internationalizeButton);   // International Button setup
 function inName(nameStr){
   var splitLoc = nameStr.indexOf(" ");
   var regCase = nameStr.slice(0,splitLoc);
-  var uppCase = nameStr.slice(splitLoc).toUpperCase;
-  return regCase.slice(0,1).toUpperCase + regCase.slice(1) + uppCase;
+  var uppCase = nameStr.slice(splitLoc).toUpperCase();
+  var totalCase = regCase.slice(0,1).toUpperCase() + regCase.slice(1) + uppCase;
+
+  return totalCase;
 }
 
 projects.display();
+ 
+$("#mapDiv").append(googleMap);
