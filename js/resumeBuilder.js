@@ -64,16 +64,28 @@ var work = {
   var projects = {
   	"projects": [
   		{
-  			"title": null,
-  			"dates": null,
-  			"description": null ,
+  			"title": "First Project",
+  			"dates": "Today",
+  			"description": "In Progress" ,
    			"images": null
   		}
   	]
 
   }
 
-
+projects.display = function() {
+    for(var x in projects.projects){
+      $("#projects").append(HTMLprojectStart);
+      var projTitle = HTMLprojectTitle.replace("%data%",projects.projects[x].title);
+      var projDates = HTMLprojectDates.replace("%data%",projects.projects[x].dates);
+      var projDesc = HTMLprojectDescription.replace("%data%",projects.projects[x].description);
+      var projImage = HTMLprojectImage.replace("%data%",projects.projects[x].images);
+      $(".project-entry:last").append(projTitle);
+      $(".project-entry:last").append(projDates);
+      $(".project-entry:last").append(projDesc);
+      $(".project-entry:last").append(projImage);
+  }  
+}
 
 
 if(bio.skills.length > 0){
@@ -105,6 +117,19 @@ displayWork();
 
 $(document).click(function(loc){
 
- 	logClicks(loc);
+ 	var x = loc.pageX;
+  var y = loc.pageY;
+
+  logClicks(x,y);
 
  });
+
+$("#main").append(internationalizeButton);   // International Button setup
+function inName(nameStr){
+  var splitLoc = nameStr.indexOf(" ");
+  var regCase = nameStr.slice(0,splitLoc);
+  var uppCase = nameStr.slice(splitLoc).toUpperCase;
+  return regCase.slice(0,1).toUpperCase + regCase.slice(1) + uppCase;
+}
+
+projects.display();
