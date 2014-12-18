@@ -20,7 +20,7 @@ var education = {
     {
         "name": "Mount San Antonio",
         "location": "San Diego",
-        "degree": "transfer",
+        "degree": "Transfer",
         "majors": "Electrical Engineering",
         "dates": "2005-2008",
         "url": "mtsac.com"
@@ -144,7 +144,44 @@ projects.display = function() {
 
 projects.display();
 
+// Education Info
 
+function displayEducation(){
+
+for(var schools in education.schools){
+  var formattedSchoolName = HTMLschoolName.replace("%data%",education.schools[schools].name);
+  var formattedSchoolDegree = HTMLschoolDegree.replace("%data%",education.schools[schools].degree);
+  var formattedSchoolDates = HTMLschoolDates.replace("%data%",education.schools[schools].dates);
+  var formattedSchoolLocation = HTMLschoolLocation.replace("%data%",education.schools[schools].location);
+  var formattedSchoolMajor = HTMLschoolMajor.replace("%data%",education.schools[schools].majors)
+  $("#education").append( HTMLschoolStart);
+  $(".education-entry:last").append(formattedSchoolName);
+  $(".education-entry:last").append(formattedSchoolDegree);
+    $(".education-entry:last").append(formattedSchoolDates);
+      $(".education-entry:last").append(formattedSchoolLocation);
+        $(".education-entry:last").append(formattedSchoolMajor);
+}
+
+$("#education").append(HTMLonlineClasses);
+
+for (var onlineCourses in education.onlinecourse){
+  var formattedOnlineTitle = HTMLonlineTitle.replace("%data%",education.onlinecourse[onlineCourses].title);
+  var formattedOnlineSchool = HTMLonlineSchool.replace("%data%",education.onlinecourse[onlineCourses].school);
+  var formattedOnlineDates = HTMLonlineDates.replace("%data%",education.onlinecourse[onlineCourses].dates);
+  var formattedOnlineUrl = HTMLonlineURL.replace("%data%",education.onlinecourse[onlineCourses].url);
+  
+  $("#education").append(formattedOnlineTitle);
+    $("#education").append(formattedOnlineSchool);
+      $("#education").append(formattedOnlineDates);
+        $("#education").append(formattedOnlineUrl);
+
+
+
+
+}
+}
+
+displayEducation();
 
 
 $(document).click(function(loc){
