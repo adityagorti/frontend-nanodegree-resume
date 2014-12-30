@@ -10,8 +10,11 @@ var bio = {                                   //object set up
     },
     "welcMessage": "Welcome to my Resume",
     "skills": [
-        "awesome",
-        "badass"
+        "Fast Learner",
+        "Quick Thinker",
+        "Reliable",
+        "Problem Solver",
+        "Innovator"
     ]
 }
 
@@ -33,12 +36,12 @@ var education = {
         "dates": "2008-2011",
         "url": "ucsd.edu"
     }],
-    "onlinecourse": {
+    "onlinecourse": [{
     	"title": "Udacity Nano Degree",
     	"school": "Udacity",
     	"dates": "2014-present",
     	"url": "Udacity.com"
-    }
+    }]
     }
 
 var work = {
@@ -99,9 +102,9 @@ console.log(bio.contacts.github);
  if(bio.skills.length > 0){
   
   $("#header").append(HTMLskillsStart);
-  $("#skills").append(HTMLskills.replace("%data%",bio.skills[0]));
-  $("#skills").append(HTMLskills.replace("%data%",bio.skills[1]));
-
+  for(i=0;i<bio.skills.length;i++){
+  $("#skills").append(HTMLskills.replace("%data%",bio.skills[i]));
+  }
 }
 
 //Work Experience Section
@@ -170,10 +173,10 @@ for (var onlineCourses in education.onlinecourse){
   var formattedOnlineDates = HTMLonlineDates.replace("%data%",education.onlinecourse[onlineCourses].dates);
   var formattedOnlineUrl = HTMLonlineURL.replace("%data%",education.onlinecourse[onlineCourses].url);
   
-  $("#education").append(formattedOnlineTitle);
-    $("#education").append(formattedOnlineSchool);
-      $("#education").append(formattedOnlineDates);
-        $("#education").append(formattedOnlineUrl);
+  $("#onlineClass").append(formattedOnlineTitle);
+  $("#onlineClass").append(formattedOnlineSchool);
+  $("#onlineClass").append(formattedOnlineDates);
+  $("#onlineClass").append(formattedOnlineUrl);
 
 
 

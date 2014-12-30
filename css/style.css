@@ -77,6 +77,7 @@ a {
   text-decoration: none;
   margin-top: 10px;
   display: block;
+
 }
 
 .welcome-message {
@@ -137,6 +138,10 @@ a {
 
 ul {
   list-style-type: none;
+}
+#skills {
+    display: inline;
+
 }
 
 .biopic {
@@ -212,4 +217,9 @@ span {
   .biopic {
     display: block;
   }
+}
+
+#classTitle{
+  font-size: 15px;
+
 }
