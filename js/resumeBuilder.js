@@ -158,8 +158,8 @@ for(var schools in education.schools){
   var formattedSchoolLocation = HTMLschoolLocation.replace("%data%",education.schools[schools].location);
   var formattedSchoolMajor = HTMLschoolMajor.replace("%data%",education.schools[schools].majors)
   $("#education").append( HTMLschoolStart);
-  $(".education-entry:last").append(formattedSchoolName);
-  $(".education-entry:last").append(formattedSchoolDegree);
+  $(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
+  
     $(".education-entry:last").append(formattedSchoolDates);
       $(".education-entry:last").append(formattedSchoolLocation);
         $(".education-entry:last").append(formattedSchoolMajor);
@@ -173,8 +173,8 @@ for (var onlineCourses in education.onlinecourse){
   var formattedOnlineDates = HTMLonlineDates.replace("%data%",education.onlinecourse[onlineCourses].dates);
   var formattedOnlineUrl = HTMLonlineURL.replace("%data%",education.onlinecourse[onlineCourses].url);
   
-  $("#onlineClass").append(formattedOnlineTitle);
-  $("#onlineClass").append(formattedOnlineSchool);
+  $("#onlineClass").append(formattedOnlineTitle + formattedOnlineSchool);
+  //$("#onlineClass").append(formattedOnlineSchool);
   $("#onlineClass").append(formattedOnlineDates);
   $("#onlineClass").append(formattedOnlineUrl);
 
@@ -206,6 +206,14 @@ function inName(nameStr){
   return totalCase;
 }
 
-
+// map
  
 $("#mapDiv").append(googleMap);
+
+
+// footer
+
+$('#footerContacts').append(formattedMobile);
+$('#footerContacts').append(formattedEmail);
+$('#footerContacts').append(formattedGit);
+$('#footerContacts').append(formattedLocation);
