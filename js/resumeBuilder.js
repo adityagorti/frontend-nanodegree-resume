@@ -12,8 +12,8 @@ var bio = {                                   //object set up
     "skills": [
         "Fast Learner",
         "Quick Thinker",
-        "Reliable",
-        "Problem Solver",
+        "Adept in Web technologies",
+        "Excellent Problem Solver",
         "Innovator"
     ]
 }
@@ -22,11 +22,11 @@ var education = {
     "schools": [
     {
         "name": "Mount San Antonio",
-        "location": "San Diego",
-        "degree": "Transfer",
+        "location": "Diamond Bar, CA",
+        "degree": "Associate Degree",
         "majors": "Electrical Engineering",
         "dates": "2005-2008",
-        "url": "mtsac.com"
+        "url": "http://www.mtsac.edu/"
     },
 
     {	"name": "UCSD",
@@ -37,11 +37,17 @@ var education = {
         "url": "ucsd.edu"
     }],
     "onlinecourse": [{
-    	"title": "Udacity Nano Degree",
+    	"title": "Front End Web Development Nano Degree",
     	"school": "Udacity",
     	"dates": "2014-present",
     	"url": "Udacity.com"
-    }]
+    },
+      {
+        "title": "Intro to Front End Development",
+        "school": "Thinkful",
+        "dates": "Jan 2014 - July 2014",
+        "url": "http://www.thinkful.com/"
+      }]
     }
 
 var work = {
@@ -51,14 +57,23 @@ var work = {
 			"title": "Service Analyst",
 			"location": "San Diego",
 			"dates": "2011-Present",
-			"description":"Service Analysis"
+			"description":"Manage a team of financial advisors across the country. Co-developed the UI for a self-directed platform to make trading options easier for our advisors. "
 		},
-		{
+		
+    {
+      "employer": "Weebly",
+      "title": "Remote Analyst",
+      "location": "San Francisco, CA",
+      "dates": "Dec 2013-Present",
+      "description":"Troubleshoot and diagnose user's web sites. Involves routinely checking domain configurations, checking sitemaps, etc."
+    },
+
+    {
 			"employer": "Ametek",
 			"title": "Repair Admin",
-			"location": "Oakland, CA",
+			"location": "San Diego, CA",
 			"dates": "2010-2011",
-			"description":"Service Analysis"
+			"description":"Ran the repair and service area for programmable power supplies. Oversaw the eastern seaboard and instituted a lean program to cut down turn around times to 5 days from 2 weeks."
 		}
 		]
 	
@@ -68,9 +83,9 @@ var work = {
   	"projects": [
   		{
   			"title": "First Project",
-  			"dates": "Today",
-  			"description": "In Progress" ,
-   			"images": null
+  			"dates": "September 2014",
+  			"description": "Recreated a site from a mockup" ,
+   			"images": "../images/proj1mockup.png"
   		}
   	]
 
@@ -88,7 +103,7 @@ var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 var formattedGit = HTMLgithub.replace("%data%",bio.contacts.github);
 var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
-var formattedImage = HTMLbioPic.replace("%data%","https://placekitten.com/g/200/300");
+var formattedImage = HTMLbioPic.replace("%data%","https://placekitten.com/g/200/200");
 var formattedWelc = HTMLWelcomeMsg.replace("%data%",bio.welcMessage);
 
 console.log(bio.contacts.github);
@@ -166,23 +181,27 @@ for(var schools in education.schools){
 }
 
 $("#education").append(HTMLonlineClasses);
-
+    var i = 0;
 for (var onlineCourses in education.onlinecourse){
+  
   var formattedOnlineTitle = HTMLonlineTitle.replace("%data%",education.onlinecourse[onlineCourses].title);
   var formattedOnlineSchool = HTMLonlineSchool.replace("%data%",education.onlinecourse[onlineCourses].school);
   var formattedOnlineDates = HTMLonlineDates.replace("%data%",education.onlinecourse[onlineCourses].dates);
   var formattedOnlineUrl = HTMLonlineURL.replace("%data%",education.onlinecourse[onlineCourses].url);
-  
   $("#onlineClass").append(formattedOnlineTitle + formattedOnlineSchool);
-  //$("#onlineClass").append(formattedOnlineSchool);
   $("#onlineClass").append(formattedOnlineDates);
   $("#onlineClass").append(formattedOnlineUrl);
+   
 
+   if(education.onlinecourse.length!=0 && i<(education.onlinecourse.length-1)){ $('#onlineClass').append('<hr>');}
+   i++; 
+  }
 
 
 
 }
-}
+
+
 
 displayEducation();
 
