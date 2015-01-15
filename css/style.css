@@ -226,3 +226,15 @@ span {
   font-size: 17px;
   font-weight: 400;
 }
+
+.navMenu {
+  float: right;
+}
+
+.navList {
+  float: right;
+}
+
+.hideClass {
+  display: none;
+}

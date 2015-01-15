@@ -93,8 +93,18 @@ var work = {
 
 var formattedName = HTMLheaderName.replace("%data%",bio.name);  //header(Name and Role) information
 var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
+var formattedMenu = HTMLnavMenu.replace("%data%","Menu");
+$("#header").prepend(formattedMenu);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
+
+//Nav Menu code
+
+$(".navMenu").append(HTMLnavList);
+
+$(".navMenu").on('click',function() {
+  $(".navList").toggleClass("hideClass");
+});
 
 
 //Contact info
